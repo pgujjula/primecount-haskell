@@ -1,0 +1,56 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           primecount
+version:        0.0.0.0
+synopsis:       Bindings to the primecount library
+description:    Please see the README on Github at <https://github.com/pgujjula/primecount-haskell#readme>
+category:       Math
+homepage:       https://github.com/pgujjula/primecount-haskell#readme
+bug-reports:    https://github.com/pgujjula/primecount-haskell/issues
+author:         Preetham Gujjula
+maintainer:     primecount-haskell@mail.preetham.io
+copyright:      2021 Preetham Gujjula
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/pgujjula/primecount-haskell
+
+library
+  exposed-modules:
+      Math.NumberTheory.PrimeCount
+      Math.NumberTheory.PrimeCount.FFI
+  other-modules:
+      Paths_primecount
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Wmissing-export-lists -Wincomplete-record-updates -Wpartial-fields -Wmissing-home-modules -Werror=missing-home-modules -Widentities -Wredundant-constraints -Wmissing-export-lists
+  extra-libraries:
+      primecount
+  build-depends:
+      base >=4.13 && <5.0
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Test.Math.NumberTheory.PrimeCount
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Wmissing-export-lists -Wincomplete-record-updates -Wpartial-fields -Wmissing-home-modules -Werror=missing-home-modules -Widentities -Wredundant-constraints -Wmissing-export-lists
+  build-depends:
+      base >=4.13 && <5.0
+    , primecount
+    , silently
+    , tasty
+    , tasty-hunit
+  default-language: Haskell2010
