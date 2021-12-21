@@ -1,0 +1,49 @@
+name:        primecount
+version:     0.0.0.0
+synopsis:    Bindings to the primecount library
+github:      "pgujjula/primecount-haskell"
+license:     BSD-3-Clause
+author:      "Preetham Gujjula"
+maintainer:  "primecount-haskell@mail.preetham.io"
+copyright:   "2021 Preetham Gujjula"
+category:    Math
+description: Please see the README on Github at
+             <https://github.com/pgujjula/primecount-haskell#readme>
+
+extra-source-files:
+- README.md
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Wmissing-export-lists
+- -Wincomplete-record-updates
+- -Wpartial-fields
+- -Wmissing-home-modules
+- -Werror=missing-home-modules
+- -Widentities
+- -Wredundant-constraints
+- -Wmissing-export-lists
+
+library:
+  source-dirs: src
+  dependencies:
+  - base >= 4.13 && < 5.0
+  extra-libraries:
+  - primecount
+  exposed-modules:
+  - Math.NumberTheory.PrimeCount
+  - Math.NumberTheory.PrimeCount.FFI
+
+tests:
+  spec:
+    source-dirs: test
+    dependencies:
+    - base >= 4.13 && < 5.0
+    - primecount
+    - silently
+    - tasty
+    - tasty-hunit
+    main: Main.hs
+    other-modules:
+    - Test.Math.NumberTheory.PrimeCount
