@@ -10,6 +10,7 @@ category:    Math
 description: Please see the README on Github at
              <https://github.com/pgujjula/primecount-haskell#readme>
 
+tested-with: GHC ==8.4.4 || ==8.6.5 || ==8.8.4 || ==8.10.7 || ==9.0.1 || ==9.2.1
 extra-source-files:
 - README.md
 
@@ -25,21 +26,24 @@ ghc-options:
 - -Wredundant-constraints
 - -Wmissing-export-lists
 
+dependencies:
+- base >= 4.7 && < 5.0
+
 library:
   source-dirs: src
-  dependencies:
-  - base >= 4.13 && < 5.0
   extra-libraries:
   - primecount
   exposed-modules:
   - Math.NumberTheory.PrimeCount
   - Math.NumberTheory.PrimeCount.FFI
+  when:
+  - condition: false
+    other-modules: Paths_primecount
 
 tests:
   spec:
     source-dirs: test
     dependencies:
-    - base >= 4.13 && < 5.0
     - primecount
     - silently
     - tasty

@@ -1,4 +1,6 @@
 # `primecount` for Haskell
+[![Haskell-CI](https://github.com/pgujjula/primecount-haskell/actions/workflows/haskell-ci.yml/badge.svg)](https://github.com/pgujjula/primecount-haskell/actions/workflows/haskell-ci.yml)
+
 This library provides Haskell bindings to Kim Walisch's
 [primecount](https://github.com/kimwalisch/primecount) library.
 
