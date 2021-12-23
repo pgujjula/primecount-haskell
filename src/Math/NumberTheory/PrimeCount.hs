@@ -42,20 +42,19 @@ primePi n
     n' = toInteger n
 
 primePiStr :: Integer -> Integer
-primePiStr n = fromInteger $
-  unsafePerformIO $ do
-    withCString (show n) $ \nString -> do
-      let len = 32 :: CSize
-      allocaArray (fromIntegral len) $ \(res :: CString) -> do
-        ret <- primecount_pi_str nString res len
-        if ret < 0 || ret > fromIntegral len
-          then error "primePi: call to primecount_pi_str failed"
-          else do
-            answer <- peekCString res
-            maybe
-              (error "primePi: couldn't parse result of primecount_pi_str")
-              pure
-              (readMaybe answer)
+primePiStr n = unsafePerformIO $ do
+  withCString (show n) $ \nString -> do
+    let len = 32 :: CSize
+    allocaArray (fromIntegral len) $ \(res :: CString) -> do
+      ret <- primecount_pi_str nString res len
+      if ret < 0 || ret > fromIntegral len
+        then error "primePi: call to primecount_pi_str failed"
+        else do
+          answer <- peekCString res
+          maybe
+            (error "primePi: couldn't parse result of primecount_pi_str")
+            pure
+            (readMaybe answer)
 
 -- | The nth prime, starting at @nthPrime 1 == 2@.
 --
