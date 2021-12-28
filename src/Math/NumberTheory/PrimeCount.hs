@@ -11,8 +11,12 @@
 -- library. For a lower-level interface, see "Math.NumberTheory.PrimeCount.FFI#".
 module Math.NumberTheory.PrimeCount
   ( primePi,
+    primePiMaxBound,
     nthPrime,
     primePhi,
+    getNumPrimecountThreads,
+    setNumPrimecountThreads,
+    primecountVersion
   )
 where
 
@@ -25,10 +29,9 @@ import System.IO.Unsafe (unsafePerformIO)
 import Text.Read (readMaybe)
 
 -- | The number of primes less than or equal to @n@. Throws an error if @n@
---   is too large. The maximum value for @n@ is is 10^31 on 64-bit systems and
---   2^63-1 on 32-bit systems. Also might throw an error if there's not enough
---   memory available to compute the result, which can happen even if @n@ is
---   smaller than the theoretical maximum.
+--   is larger than 'primePiMaxBound'. Also might throw an error if there's not
+--   enough memory available to compute the result, which can happen even if @n@
+--   is smaller than @primePiMaxBound@.
 primePi :: Integral a => a -> a
 primePi n
   | n < 0 = 0
@@ -40,6 +43,14 @@ primePi n
 
     n' :: Integer
     n' = toInteger n
+
+-- | The largest input supported by @primePi@.
+--
+-- * 64-bit CPUs: @10^31@
+-- * 32-bit CPUs: @2^63 - 1@
+primePiMaxBound :: Integer
+primePiMaxBound = read $ unsafePerformIO $ peekCString primecount_get_max_x
+{-# NOINLINE primePiMaxBound #-}
 
 primePiStr :: Integer -> Integer
 primePiStr n = unsafePerformIO $ do
@@ -91,3 +102,19 @@ primePhi n a
 
     a' :: Integer
     a' = min bound (toInteger a)
+
+-- |  Get the currently set number of threads used by libprimecount.
+getNumPrimecountThreads :: IO Int
+getNumPrimecountThreads = primecount_get_num_threads
+
+-- | Set the number of threads used by libprimecount. If the input is not
+--   positive, the thread count is set to 1. If the input is greater than the
+--   number of CPUs available, the thread count is set to the number of CPUs
+--   available.
+setNumPrimecountThreads :: Int -> IO ()
+setNumPrimecountThreads = primecount_set_num_threads
+
+-- | Get the libprimecount version number, in the form @"i.j"@
+primecountVersion :: String
+primecountVersion = unsafePerformIO (peekCString primecount_version)
+{-# NOINLINE primecountVersion #-}
