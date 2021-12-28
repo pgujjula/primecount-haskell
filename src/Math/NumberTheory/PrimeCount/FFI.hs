@@ -10,12 +10,17 @@
 -- "Math.NumberTheory.PrimeCount#".
 --
 -- Documentation adapted from the [C API reference]
--- (https://github.com/kimwalisch/primecount/blob/master/doc/libprimecount.md#c-api-reference).
+-- (https://github.com/kimwalisch/primecount/blob/master/doc/libprimecount.md#c-api-reference)
+-- and [@primecount.h@](https://github.com/kimwalisch/primecount/blob/master/include/primecount.h).
 module Math.NumberTheory.PrimeCount.FFI
   ( primecount_pi,
     primecount_pi_str,
     primecount_nth_prime,
     primecount_phi,
+    primecount_get_max_x,
+    primecount_get_num_threads,
+    primecount_set_num_threads,
+    primecount_version
   )
 where
 
@@ -39,3 +44,26 @@ foreign import ccall unsafe "primecount_nth_prime"
 --   any of the first @a@ primes.
 foreign import ccall unsafe "primecount_phi"
   primecount_phi :: Int64 -> Int64 -> Int64
+
+-- | @primecount_get_max_x@ is the largest number supported by
+--   'primecount_pi_str'.
+--
+-- * 64-bit CPUs: @10^31@
+-- * 32-bit CPUs: @2^63 - 1@
+--
+-- The return type is a 'CString' as @primecount_get_max_x@ may be a
+-- 128-bit integer which is not supported by some compilers.
+foreign import ccall unsafe "primecount_get_max_x"
+  primecount_get_max_x :: CString
+
+-- | Get the currently set number of threads
+foreign import ccall unsafe "primecount_get_num_threads"
+  primecount_get_num_threads :: IO Int
+
+-- | Set the number of threads
+foreign import ccall unsafe "primecount_set_num_threads"
+  primecount_set_num_threads :: Int -> IO ()
+
+-- | Get the primecount version number, in the form “i.j”
+foreign import ccall unsafe "primecount_version"
+  primecount_version :: CString
