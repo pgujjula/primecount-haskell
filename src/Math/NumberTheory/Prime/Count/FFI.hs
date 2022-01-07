@@ -1,7 +1,7 @@
 -- |
 -- Module      : Math.NumberTheory.Prime.Count.FFI
 -- Copyright   : 2021 Preetham Gujjula
--- License     : BSD3
+-- License     : BSD-3-Clause
 -- Maintainer  : primecount-haskell@mail.preetham.io
 -- Stability   : experimental
 --
@@ -21,7 +21,7 @@ module Math.NumberTheory.Prime.Count.FFI
     primecount_get_max_x,
     primecount_get_num_threads,
     primecount_set_num_threads,
-    primecount_version
+    primecount_version,
   )
 where
 
@@ -33,7 +33,7 @@ import Foreign.C.Types (CSize (..))
 foreign import ccall unsafe "primecount_pi"
   primecount_pi :: Int64 -> Int64
 
--- | Count the number of primes <= x (supports 128-bit)
+-- | Count the number of primes <= x (supports 128-bit).
 foreign import ccall unsafe "primecount_pi_str"
   primecount_pi_str :: CString -> CString -> CSize -> IO Int
 
@@ -51,20 +51,17 @@ foreign import ccall unsafe "primecount_phi"
 --
 -- * 64-bit CPUs: @10^31@
 -- * 32-bit CPUs: @2^63 - 1@
---
--- The return type is a 'CString' as @primecount_get_max_x@ may be a
--- 128-bit integer which is not supported by some compilers.
 foreign import ccall unsafe "primecount_get_max_x"
   primecount_get_max_x :: CString
 
--- | Get the currently set number of threads
+-- | Get the currently set number of threads used by @libprimecount@.
 foreign import ccall unsafe "primecount_get_num_threads"
   primecount_get_num_threads :: IO Int
 
--- | Set the number of threads
+-- | Set the number of threads used by @libprimecount@.
 foreign import ccall unsafe "primecount_set_num_threads"
   primecount_set_num_threads :: Int -> IO ()
 
--- | Get the primecount version number, in the form “i.j”
+-- | Get the @libprimecount@ version number, in the form @"i.j"@.
 foreign import ccall unsafe "primecount_version"
   primecount_version :: CString

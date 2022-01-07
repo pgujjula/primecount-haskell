@@ -1,5 +1,8 @@
-{-# OPTIONS_GHC -Wno-all #-}
-
+-- |
+-- Copyright   : 2022 Preetham Gujjula
+-- License     : BSD-3-Clause
+-- Maintainer  : primecount-haskell@mail.preetham.io
+-- Stability   : experimental
 module Main (main) where
 
 import Math.NumberTheory.Prime.Count
