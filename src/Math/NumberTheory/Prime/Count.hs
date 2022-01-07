@@ -1,7 +1,7 @@
 -- |
 -- Module      : Math.NumberTheory.Prime.Count
 -- Copyright   : 2021 Preetham Gujjula
--- License     : BSD-Clause
+-- License     : BSD-3-Clause
 -- Maintainer  : primecount-haskell@mail.preetham.io
 -- Stability   : experimental
 --
