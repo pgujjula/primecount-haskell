@@ -41,7 +41,7 @@ library:
     other-modules: Paths_primecount
 
 tests:
-  spec:
+  primecount-tests:
     source-dirs: test
     dependencies:
     - primecount
@@ -51,3 +51,14 @@ tests:
     main: Main.hs
     other-modules:
     - Test.Math.NumberTheory.Prime.Count
+
+benchmarks:
+  primecount-bench:
+    source-dirs: bench
+    dependencies:
+    - primecount
+    - tasty-bench
+    main: Main.hs
+    when:
+    - condition: false
+      other-modules: Paths_primecount
