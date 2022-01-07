@@ -6,13 +6,14 @@ license:     BSD-3-Clause
 author:      "Preetham Gujjula"
 maintainer:  "primecount-haskell@mail.preetham.io"
 copyright:   "2021 Preetham Gujjula"
-category:    Math
+category:    Math, Number Theory
 description: Please see the README on Github at
              <https://github.com/pgujjula/primecount-haskell#readme>
 
 tested-with: GHC ==8.4.4 || ==8.6.5 || ==8.8.4 || ==8.10.7 || ==9.0.1 || ==9.2.1
 extra-source-files:
 - README.md
+- ChangeLog.md
 
 ghc-options:
 - -Wall
@@ -25,6 +26,9 @@ ghc-options:
 - -Widentities
 - -Wredundant-constraints
 - -Wmissing-export-lists
+
+default-extensions:
+- ScopedTypeVariables
 
 dependencies:
 - base >= 4.7 && < 5.0
@@ -43,22 +47,22 @@ library:
 tests:
   primecount-tests:
     source-dirs: test
+    main: Main.hs
     dependencies:
     - primecount
     - silently
     - tasty
     - tasty-hunit
-    main: Main.hs
     other-modules:
     - Test.Math.NumberTheory.Prime.Count
 
 benchmarks:
   primecount-bench:
     source-dirs: bench
+    main: Main.hs
     dependencies:
     - primecount
     - tasty-bench
-    main: Main.hs
     when:
     - condition: false
       other-modules: Paths_primecount

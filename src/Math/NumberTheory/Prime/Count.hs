@@ -1,9 +1,7 @@
-{-# LANGUAGE ScopedTypeVariables #-}
-
 -- |
 -- Module      : Math.NumberTheory.Prime.Count
 -- Copyright   : 2021 Preetham Gujjula
--- License     : BSD3
+-- License     : BSD-Clause
 -- Maintainer  : primecount-haskell@mail.preetham.io
 -- Stability   : experimental
 --
@@ -14,10 +12,11 @@ module Math.NumberTheory.Prime.Count
   ( primePi,
     primePiMaxBound,
     nthPrime,
+    nthPrimeMaxBound,
     primePhi,
     getNumPrimecountThreads,
     setNumPrimecountThreads,
-    primecountVersion
+    primecountVersion,
   )
 where
 
@@ -36,8 +35,9 @@ import Text.Read (readMaybe)
 primePi :: Integral a => a -> a
 primePi n
   | n < 0 = 0
-  | n' > bound = fromInteger (primePiStr n')
-  | otherwise = fromIntegral (primecount_pi (fromInteger n'))
+  | n' <= bound = fromIntegral (primecount_pi (fromInteger n'))
+  | n' <= primePiMaxBound = fromInteger (primePiStr n')
+  | otherwise = error "primePi: input larger than primePiMaxBound"
   where
     bound :: Integer
     bound = toInteger (maxBound :: Int64)
@@ -45,7 +45,7 @@ primePi n
     n' :: Integer
     n' = toInteger n
 
--- | The largest input supported by @primePi@.
+-- | The largest input supported by 'primePi'.
 --
 -- * 64-bit CPUs: @10^31@
 -- * 32-bit CPUs: @2^63 - 1@
@@ -67,12 +67,12 @@ primePiStr n = unsafePerformIO $ do
             (error "primePi: couldn't parse result of primecount_pi_str")
             pure
             (readMaybe answer)
+{-# NOINLINE primePiStr #-}
 
 -- | The nth prime, starting at @nthPrime 1 == 2@.
 --
 --    * Throws an error if the input is less than 1.
---    * Throws an error if the input is larger than
---      @primePi ('maxBound' :: 'Int64') == 216289611853439384@.
+--    * Throws an error if the input is larger than 'nthPrimeMaxBound`.
 nthPrime :: Integral a => a -> a
 nthPrime n
   | n < 1 = error "nthPrime: n must be >= 1"
@@ -84,6 +84,11 @@ nthPrime n
 
     n' :: Integer
     n' = toInteger n
+
+-- | The largest input supported by 'nthPrime', equal to
+--   @primePi ('maxBound' :: 'Int64') == 216289611853439384@.
+nthPrimeMaxBound :: Integer
+nthPrimeMaxBound = 216289611853439384
 
 -- | @primePhi n a@ counts the number of positive integers @<= n@ that are not
 --    divisible by any of the first @a@ primes. Throws an error if @n@ is larger
@@ -104,18 +109,18 @@ primePhi n a
     a' :: Integer
     a' = min bound (toInteger a)
 
--- |  Get the currently set number of threads used by libprimecount.
+-- | Get the currently set number of threads used by @libprimecount@.
 getNumPrimecountThreads :: IO Int
 getNumPrimecountThreads = primecount_get_num_threads
 
--- | Set the number of threads used by libprimecount. If the input is not
+-- | Set the number of threads used by @libprimecount@. If the input is not
 --   positive, the thread count is set to 1. If the input is greater than the
 --   number of CPUs available, the thread count is set to the number of CPUs
 --   available.
 setNumPrimecountThreads :: Int -> IO ()
 setNumPrimecountThreads = primecount_set_num_threads
 
--- | Get the libprimecount version number, in the form @"i.j"@
+-- | Get the @libprimecount@ version number, in the form @"i.j"@
 primecountVersion :: String
 primecountVersion = unsafePerformIO (peekCString primecount_version)
 {-# NOINLINE primecountVersion #-}
