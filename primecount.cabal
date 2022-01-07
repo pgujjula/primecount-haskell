@@ -5,7 +5,7 @@ cabal-version: 2.2
 -- see: https://github.com/sol/hpack
 
 name:           primecount
-version:        0.0.0.0
+version:        0.1.0.0
 synopsis:       Bindings to the primecount library
 description:    Please see the README on Github at <https://github.com/pgujjula/primecount-haskell#readme>
 category:       Math, Number Theory
