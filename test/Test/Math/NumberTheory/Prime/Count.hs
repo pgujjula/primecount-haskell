@@ -5,11 +5,11 @@
 -- License     : BSD3
 -- Maintainer  : primecount-haskell@mail.preetham.io
 -- Stability   : experimental
-module Test.Math.NumberTheory.PrimeCount (tests) where
+module Test.Math.NumberTheory.Prime.Count (tests) where
 
 import Control.Exception (SomeException, catch, evaluate)
 import Data.Int (Int64)
-import Math.NumberTheory.PrimeCount (nthPrime, primePhi, primePi)
+import Math.NumberTheory.Prime.Count (nthPrime, primePhi, primePi)
 import System.IO (stderr)
 import System.IO.Silently (hSilence)
 import Test.Tasty (TestTree, testGroup)
@@ -18,7 +18,7 @@ import Test.Tasty.HUnit (testCase, (@?=))
 tests :: TestTree
 tests =
   testGroup
-    "Math.NumberTheory.PrimeCount"
+    "Math.NumberTheory.Prime.Count"
     [primePiTest, nthPrimeTest, primePhiTest]
 
 throwsException :: a -> IO Bool

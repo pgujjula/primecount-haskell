@@ -1,5 +1,5 @@
 -- |
--- Module      : Math.NumberTheory.PrimeCount
+-- Module      : Math.NumberTheory.Prime.Count.FFI
 -- Copyright   : 2021 Preetham Gujjula
 -- License     : BSD3
 -- Maintainer  : primecount-haskell@mail.preetham.io
@@ -7,12 +7,13 @@
 --
 -- This module provides direct access to the C API of the primecount library.
 -- It's recommended that you use the higher-level interface in
--- "Math.NumberTheory.PrimeCount#".
+-- "Math.NumberTheory.Prime.Count#".
 --
 -- Documentation adapted from the [C API reference]
 -- (https://github.com/kimwalisch/primecount/blob/master/doc/libprimecount.md#c-api-reference)
--- and [@primecount.h@](https://github.com/kimwalisch/primecount/blob/master/include/primecount.h).
-module Math.NumberTheory.PrimeCount.FFI
+-- and [@primecount.h@]
+-- (https://github.com/kimwalisch/primecount/blob/master/include/primecount.h).
+module Math.NumberTheory.Prime.Count.FFI
   ( primecount_pi,
     primecount_pi_str,
     primecount_nth_prime,

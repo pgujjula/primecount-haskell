@@ -1,15 +1,16 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
 -- |
--- Module      : Math.NumberTheory.PrimeCount
+-- Module      : Math.NumberTheory.Prime.Count
 -- Copyright   : 2021 Preetham Gujjula
 -- License     : BSD3
 -- Maintainer  : primecount-haskell@mail.preetham.io
 -- Stability   : experimental
 --
 -- This module provides a high-level, polymorphic interface to the primecount
--- library. For a lower-level interface, see "Math.NumberTheory.PrimeCount.FFI#".
-module Math.NumberTheory.PrimeCount
+-- library. For a lower-level interface, see
+-- "Math.NumberTheory.Prime.Count.FFI#".
+module Math.NumberTheory.Prime.Count
   ( primePi,
     primePiMaxBound,
     nthPrime,
@@ -24,7 +25,7 @@ import Data.Int (Int64)
 import Foreign.C.String (CString, peekCString, withCString)
 import Foreign.C.Types (CSize)
 import Foreign.Marshal.Array (allocaArray)
-import Math.NumberTheory.PrimeCount.FFI
+import Math.NumberTheory.Prime.Count.FFI
 import System.IO.Unsafe (unsafePerformIO)
 import Text.Read (readMaybe)
 
