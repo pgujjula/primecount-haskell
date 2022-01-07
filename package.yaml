@@ -34,8 +34,8 @@ library:
   extra-libraries:
   - primecount
   exposed-modules:
-  - Math.NumberTheory.PrimeCount
-  - Math.NumberTheory.PrimeCount.FFI
+  - Math.NumberTheory.Prime.Count
+  - Math.NumberTheory.Prime.Count.FFI
   when:
   - condition: false
     other-modules: Paths_primecount
@@ -50,4 +50,4 @@ tests:
     - tasty-hunit
     main: Main.hs
     other-modules:
-    - Test.Math.NumberTheory.PrimeCount
+    - Test.Math.NumberTheory.Prime.Count
