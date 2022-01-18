@@ -2,7 +2,7 @@
 -- Module      : Math.NumberTheory.Prime.Count.FFI
 -- Copyright   : 2021 Preetham Gujjula
 -- License     : BSD-3-Clause
--- Maintainer  : primecount-haskell@mail.preetham.io
+-- Maintainer  : libraries@mail.preetham.io
 -- Stability   : experimental
 --
 -- This module provides direct access to the C API of the primecount library.

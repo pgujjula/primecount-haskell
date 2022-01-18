@@ -12,7 +12,7 @@ category:       Math, Number Theory
 homepage:       https://github.com/pgujjula/primecount-haskell#readme
 bug-reports:    https://github.com/pgujjula/primecount-haskell/issues
 author:         Preetham Gujjula
-maintainer:     primecount-haskell@mail.preetham.io
+maintainer:     libraries@mail.preetham.io
 copyright:      2021 Preetham Gujjula
 license:        BSD-3-Clause
 license-file:   LICENSE

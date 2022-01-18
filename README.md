@@ -55,4 +55,4 @@ as an argument to Cabal.
 
 ## Bugs
 Report any bugs on the Github issue tracker, or by emailing
-[primecount-haskell@mail.preetham.io](mailto:primecount-haskell@mail.preetham.io).
+[libraries@mail.preetham.io](mailto:libraries@mail.preetham.io).
