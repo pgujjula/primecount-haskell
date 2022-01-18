@@ -4,7 +4,7 @@ synopsis:    Bindings to the primecount library
 github:      "pgujjula/primecount-haskell"
 license:     BSD-3-Clause
 author:      "Preetham Gujjula"
-maintainer:  "primecount-haskell@mail.preetham.io"
+maintainer:  "libraries@mail.preetham.io"
 copyright:   "2021 Preetham Gujjula"
 category:    Math, Number Theory
 description: Please see the README on Github at
