@@ -1,7 +1,7 @@
 -- |
 -- Copyright   : 2021 Preetham Gujjula
 -- License     : BSD-3-Clause
--- Maintainer  : primecount-haskell@mail.preetham.io
+-- Maintainer  : libraries@mail.preetham.io
 -- Stability   : experimental
 module Main (main) where
 

@@ -2,7 +2,7 @@
 -- Module      : Math.NumberTheory.Prime.Count
 -- Copyright   : 2021 Preetham Gujjula
 -- License     : BSD-3-Clause
--- Maintainer  : primecount-haskell@mail.preetham.io
+-- Maintainer  : libraries@mail.preetham.io
 -- Stability   : experimental
 --
 -- This module provides a high-level, polymorphic interface to the primecount
