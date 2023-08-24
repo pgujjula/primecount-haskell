@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.0.1
+
+### Updated
+* CI now supports GHC versions 9.6.2, 9.4.5, 9.2.8, 9.0.2, and 8.10.7.
+
 ## 0.1.0.0
 
 ### Added
