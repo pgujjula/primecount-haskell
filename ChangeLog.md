@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.0.1 (Revision 1)
+
+### Updated
+* Allow tasty-1.5.
+
 ## 0.1.0.1
 
 ### Updated
