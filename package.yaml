@@ -1,5 +1,5 @@
 name:        primecount
-version:     0.1.0.0
+version:     0.1.0.1
 synopsis:    Bindings to the primecount library
 github:      "pgujjula/primecount-haskell"
 license:     BSD-3-Clause
