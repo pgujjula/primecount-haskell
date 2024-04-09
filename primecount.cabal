@@ -8,7 +8,7 @@ name:           primecount
 version:        0.0.0.0
 synopsis:       Bindings to the primecount library
 description:    Please see the README on Github at <https://github.com/pgujjula/primecount-haskell#readme>
-category:       Math
+category:       Math, Number Theory
 homepage:       https://github.com/pgujjula/primecount-haskell#readme
 bug-reports:    https://github.com/pgujjula/primecount-haskell/issues
 author:         Preetham Gujjula
@@ -21,6 +21,7 @@ tested-with:
     GHC ==8.4.4 || ==8.6.5 || ==8.8.4 || ==8.10.7 || ==9.0.1 || ==9.2.1
 extra-source-files:
     README.md
+    ChangeLog.md
 
 source-repository head
   type: git
@@ -32,6 +33,8 @@ library
       Math.NumberTheory.Prime.Count.FFI
   hs-source-dirs:
       src
+  default-extensions:
+      ScopedTypeVariables
   ghc-options: -Wall -Wcompat -Wmissing-export-lists -Wincomplete-record-updates -Wpartial-fields -Wmissing-home-modules -Werror=missing-home-modules -Widentities -Wredundant-constraints -Wmissing-export-lists
   extra-libraries:
       primecount
@@ -46,6 +49,8 @@ test-suite primecount-tests
       Test.Math.NumberTheory.Prime.Count
   hs-source-dirs:
       test
+  default-extensions:
+      ScopedTypeVariables
   ghc-options: -Wall -Wcompat -Wmissing-export-lists -Wincomplete-record-updates -Wpartial-fields -Wmissing-home-modules -Werror=missing-home-modules -Widentities -Wredundant-constraints -Wmissing-export-lists
   build-depends:
       base >=4.7 && <5.0
@@ -60,6 +65,8 @@ benchmark primecount-bench
   main-is: Main.hs
   hs-source-dirs:
       bench
+  default-extensions:
+      ScopedTypeVariables
   ghc-options: -Wall -Wcompat -Wmissing-export-lists -Wincomplete-record-updates -Wpartial-fields -Wmissing-home-modules -Werror=missing-home-modules -Widentities -Wredundant-constraints -Wmissing-export-lists
   build-depends:
       base >=4.7 && <5.0
