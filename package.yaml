@@ -1,14 +1,17 @@
-name:        primecount
-version:     0.1.0.1
-synopsis:    Bindings to the primecount library
-github:      "pgujjula/primecount-haskell"
-license:     BSD-3-Clause
-author:      "Preetham Gujjula"
-maintainer:  "libraries@mail.preetham.io"
-copyright:   "2021 Preetham Gujjula"
-category:    Math, Number Theory
-description: Please see the README on Github at
-             <https://github.com/pgujjula/primecount-haskell#readme>
+# SPDX-FileCopyrightText: Copyright Preetham Gujjula
+# SPDX-License-Identifier: BSD-3-Clause
+name:         primecount
+version:      0.1.0.1
+synopsis:     Bindings to the primecount library
+github:       "pgujjula/primecount-haskell"
+license:      BSD-3-Clause
+license-file: LICENSES/BSD-3-Clause.txt
+author:       "Preetham Gujjula"
+maintainer:   "libraries@mail.preetham.io"
+copyright:    "Preetham Gujjula"
+category:     Math, Number Theory
+description:  Please see the README on Github at
+              <https://github.com/pgujjula/primecount-haskell#readme>
 
 tested-with: GHC ==8.10.7 || ==9.0.2 || ==9.2.8 || ==9.4.5 || ==9.6.2
 extra-source-files:
