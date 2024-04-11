@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright Preetham Gujjula
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 # `primecount` for Haskell
 [![Haskell-CI](https://github.com/pgujjula/primecount-haskell/actions/workflows/haskell-ci.yml/badge.svg)](https://github.com/pgujjula/primecount-haskell/actions/workflows/haskell-ci.yml)
 
