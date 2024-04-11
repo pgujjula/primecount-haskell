@@ -5,6 +5,7 @@ SPDX-License-Identifier: BSD-3-Clause
 
 # `primecount` for Haskell
 [![Haskell-CI](https://github.com/pgujjula/primecount-haskell/actions/workflows/haskell-ci.yml/badge.svg)](https://github.com/pgujjula/primecount-haskell/actions/workflows/haskell-ci.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/pgujjula/primecount-haskell)](https://api.reuse.software/info/github.com/pgujjula/primecount-haskell)
 
 This library provides Haskell bindings to Kim Walisch's
 [primecount](https://github.com/kimwalisch/primecount) library.
