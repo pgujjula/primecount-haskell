@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: Copyright Preetham Gujjula
 # SPDX-License-Identifier: BSD-3-Clause
+verbatim:
+  cabal-version: 3.6
 name:         primecount
 version:      0.1.0.1
 synopsis:     Bindings to the primecount library
@@ -13,7 +15,7 @@ category:     Math, Number Theory
 description:  Please see the README on Github at
               <https://github.com/pgujjula/primecount-haskell#readme>
 
-tested-with: GHC ==8.10.7 || ==9.0.2 || ==9.2.8 || ==9.4.5 || ==9.6.2
+tested-with: GHC == {8.10.7, 9.0.2, 9.2.8, 9.4.5, 9.6.2}
 extra-source-files:
 - README.md
 - ChangeLog.md
@@ -34,7 +36,7 @@ default-extensions:
 - ScopedTypeVariables
 
 dependencies:
-- base >= 4.7 && < 5.0
+- base ^>= {4.7, 4.8, 4.9, 4.10, 4.11, 4.12, 4.13, 4.14, 4.15, 4.16, 4.17, 4.18, 4.19}
 
 library:
   source-dirs: src
@@ -53,9 +55,9 @@ tests:
     main: Main.hs
     dependencies:
     - primecount
-    - silently >= 1.2 && < 1.3
-    - tasty >= 1.4 && < 1.6
-    - tasty-hunit >= 0.10 && < 0.11
+    - silently ^>= {1.2}
+    - tasty ^>= {1.4, 1.5}
+    - tasty-hunit ^>= {0.10}
     other-modules:
     - Test.Math.NumberTheory.Prime.Count
 
@@ -65,7 +67,7 @@ benchmarks:
     main: Main.hs
     dependencies:
     - primecount
-    - tasty-bench >= 0.3 && < 0.4
+    - tasty-bench ^>= {0.3}
     when:
     - condition: false
       other-modules: Paths_primecount
