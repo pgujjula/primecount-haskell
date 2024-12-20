@@ -15,7 +15,7 @@ category:     Math, Number Theory
 description:  Please see the README on Github at
               <https://github.com/pgujjula/primecount-haskell#readme>
 
-tested-with: GHC == {8.10.7, 9.0.2, 9.2.8, 9.4.8, 9.6.6, 9.8.2}
+tested-with: GHC == {8.10.7, 9.0.2, 9.2.8, 9.4.8, 9.6.6, 9.8.2, 9.10.1}
 extra-doc-files:
 - README.md
 - ChangeLog.md
@@ -36,7 +36,7 @@ default-extensions:
 - ScopedTypeVariables
 
 dependencies:
-- base ^>= {4.14, 4.15, 4.16, 4.17, 4.18, 4.19}
+- base ^>= {4.14, 4.15, 4.16, 4.17, 4.18, 4.19, 4.20}
 
 library:
   source-dirs: src
