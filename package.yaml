@@ -18,7 +18,7 @@ description:  Please see the README on Github at
 tested-with: GHC == {8.10.7, 9.0.2, 9.2.8, 9.4.8, 9.6.6, 9.8.2, 9.10.1}
 extra-doc-files:
 - README.md
-- ChangeLog.md
+- CHANGELOG.md
 
 ghc-options:
 - -Wall
