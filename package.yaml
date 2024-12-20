@@ -67,7 +67,7 @@ benchmarks:
     main: Main.hs
     dependencies:
     - primecount
-    - tasty-bench ^>= {0.3}
+    - tasty-bench ^>= {0.3, 0.4}
     when:
     - condition: false
       other-modules: Paths_primecount
