@@ -34,7 +34,7 @@ import Text.Read (readMaybe)
 --   is larger than 'primePiMaxBound'. Also might throw an error if there's not
 --   enough memory available to compute the result, which can happen even if @n@
 --   is smaller than @primePiMaxBound@.
-primePi :: Integral a => a -> a
+primePi :: (Integral a) => a -> a
 primePi n
   | n < 0 = 0
   | n' <= bound = fromIntegral (primecount_pi (fromInteger n'))
@@ -75,7 +75,7 @@ primePiStr n = unsafePerformIO $ do
 --
 --    * Throws an error if the input is less than 1.
 --    * Throws an error if the input is larger than 'nthPrimeMaxBound`.
-nthPrime :: Integral a => a -> a
+nthPrime :: (Integral a) => a -> a
 nthPrime n
   | n < 1 = error "nthPrime: n must be >= 1"
   | n' > bound = error "nthPrime: answer cannot be packed into a 64-bit int"
@@ -95,7 +95,7 @@ nthPrimeMaxBound = 216289611853439384
 -- | @primePhi n a@ counts the number of positive integers @<= n@ that are not
 --    divisible by any of the first @a@ primes. Throws an error if @n@ is larger
 --    than @'maxBound' :: 'Int64'@.
-primePhi :: Integral a => a -> a -> a
+primePhi :: (Integral a) => a -> a -> a
 primePhi n a
   | n <= 0 = 0
   | a <= 0 = n
