@@ -3,19 +3,26 @@ SPDX-FileCopyrightText: Copyright Preetham Gujjula
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-# Changelog
-
-## 0.1.0.1 (Revision 1)
-
-### Updated
-* Allow tasty-1.5.
+# Changelog for primecount
 
 ## 0.1.0.1
 
+### Release History
+
+| Release         | Date       | Tag              |
+| --------------- | ---------- | ---------------- |
+| Initial Release | 2023-08-24 | [`0.1.0.1`]      |
+| Revision 1      | 2023-09-11 | [`0.1.0.1-rev1`] |
+
 ### Updated
-* CI now supports GHC versions 9.6.2, 9.4.5, 9.2.8, 9.0.2, and 8.10.7.
+* Supported GHC versions are now: 8.10, 9.0, 9.2, 9.4, and 9.6.
+  * Support for GHC 8.4, 8.6 and 8.8 is dropped.
 
 ## 0.1.0.0
+
+| Release         | Date       | Tag              |
+| --------------- | ---------- | ---------------- |
+| Initial Release | 2022-01-07 | [`0.1.0.0`]      |
 
 ### Added
 * `Math.NumberTheory.Prime.Count.FFI`, with FFI bindings to all functions from the
@@ -26,5 +33,8 @@ SPDX-License-Identifier: BSD-3-Clause
 * Test coverage of `primePi`, `nthPrime`, and `primePhi` with `tasty-hunit`.
 * Benchmarks of `primePi`, `nthPrime`, and `primePhi` with `tasty-bench`.
 * Full Haddock documentation coverage.
-* Support for GHC 9.2.1, 9.0.1, 8.10.7, 8.8.4, 8.6.5, and 8.4.4, and
-  libprimecount v7.x, verified by GitHub Actions.
+* Support for GHC 8.4, 8.6, 8.8, 8.10, 9.0, and 9.2.
+
+[`0.1.0.1-rev1`]: https://github.com/pgujjula/primecount-haskell/releases/tag/0.1.0.1-rev1
+[`0.1.0.1`]: https://github.com/pgujjula/primecount-haskell/releases/tag/0.1.0.1
+[`0.1.0.0`]: https://github.com/pgujjula/primecount-haskell/releases/tag/0.1.0.0
