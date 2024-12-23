@@ -4,7 +4,12 @@ SPDX-License-Identifier: BSD-3-Clause
 -->
 
 # `primecount` for Haskell
+
+[![Made in Haskell](https://img.shields.io/badge/Made_in-Haskell-5e5086?logo=haskell&style=flat)](https://haskell.org)
 [![CI](https://github.com/pgujjula/primecount-haskell/actions/workflows/ci.yml/badge.svg)](https://github.com/pgujjula/primecount-haskell/actions/workflows/ci.yml)
+[![Hackage Version](https://img.shields.io/hackage/v/primecount?style=flat&color=blue)](https://hackage.haskell.org/package/primecount)
+[![Stackage Nightly Version](http://stackage.org/package/primecount/badge/nightly?color=blue)](https://www.stackage.org/nightly/package/primecount)
+[![Stackage LTS Version](http://stackage.org/package/primecount/badge/lts?color=blue)](https://www.stackage.org/lts/package/primecount)
 
 This library provides Haskell bindings to Kim Walisch's
 [primecount](https://github.com/kimwalisch/primecount) library.
