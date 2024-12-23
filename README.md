@@ -23,20 +23,7 @@ development version of the primecount package, which might have a name like
 `primecount-devel`. The current version of the Haskell bindings supports any
 version of `libprimecount >= 7.0`.
 
-Then you can build the Haskell bindings with Stack or Cabal, and read the
-documentation.
-```
-# Stack
-stack build
-stack test
-stack haddock primecount --open
-
-# Cabal
-cabal update
-cabal build
-cabal test
-cabal haddock  # and then open the documentation manually
-```
+Then you can build the Haskell bindings with Stack or Cabal as usual.
 
 ### Building `libprimecount` from source
 If you build and install the original `primecount` library from source, instead
