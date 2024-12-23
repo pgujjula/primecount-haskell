@@ -5,7 +5,6 @@ SPDX-License-Identifier: BSD-3-Clause
 
 # `primecount` for Haskell
 [![CI](https://github.com/pgujjula/primecount-haskell/actions/workflows/ci.yml/badge.svg)](https://github.com/pgujjula/primecount-haskell/actions/workflows/ci.yml)
-[![REUSE status](https://api.reuse.software/badge/github.com/pgujjula/primecount-haskell)](https://api.reuse.software/info/github.com/pgujjula/primecount-haskell)
 
 This library provides Haskell bindings to Kim Walisch's
 [primecount](https://github.com/kimwalisch/primecount) library.
@@ -58,6 +57,14 @@ extra-include-dirs:
 or pass
 `--extra-lib-dirs=/usr/local/lib64 --extra-include-dirs=/usr/local/include`
 as an argument to Cabal.
+
+## Licensing
+
+[![REUSE status](https://api.reuse.software/badge/github.com/pgujjula/primecount-haskell)](https://api.reuse.software/info/github.com/pgujjula/primecount-haskell)
+
+This project licensed under BSD-3-Clause (except for `.gitignore`, which is
+under CC0-1.0), and follows [REUSE](https://reuse.software) licensing
+principles.
 
 ## Bugs
 Report any bugs on the Github issue tracker, or by emailing
