@@ -74,7 +74,7 @@ primePiStr n = unsafePerformIO $ do
 -- | The nth prime, starting at @nthPrime 1 == 2@.
 --
 --    * Throws an error if the input is less than 1.
---    * Throws an error if the input is larger than 'nthPrimeMaxBound`.
+--    * Throws an error if the input is larger than 'nthPrimeMaxBound'.
 nthPrime :: (Integral a) => a -> a
 nthPrime n
   | n < 1 = error "nthPrime: n must be >= 1"
