@@ -10,7 +10,7 @@ github:       "pgujjula/primecount-haskell"
 license:      BSD-3-Clause
 license-file: LICENSES/BSD-3-Clause.txt
 author:       "Preetham Gujjula"
-maintainer:   "libraries@mail.preetham.io"
+maintainer:   "Preetham Gujjula <libraries@mail.preetham.io>"
 copyright:    "Preetham Gujjula"
 category:     Math, Number Theory
 description:  Please see the README on Github at
