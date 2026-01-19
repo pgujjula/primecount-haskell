@@ -12,6 +12,7 @@ SPDX-License-Identifier: BSD-3-Clause
 | Release         | Date       | Tag              |
 | --------------- | ---------- | ---------------- |
 | Initial Release | 2024-12-23 | [`0.1.0.2`]      |
+| Revision 1      | 2026-01-19 | [`0.1.0.2-rev1`]      |
 
 ### Added
 * Made project REUSE compliant (https://reuse.software) with respect to
@@ -50,6 +51,7 @@ SPDX-License-Identifier: BSD-3-Clause
 * Full Haddock documentation coverage.
 * Support for GHC 8.4, 8.6, 8.8, 8.10, 9.0, and 9.2.
 
+[`0.1.0.2-rev1`]: https://github.com/pgujjula/primecount-haskell/releases/tag/0.1.0.2-rev1
 [`0.1.0.2`]: https://github.com/pgujjula/primecount-haskell/releases/tag/0.1.0.2
 [`0.1.0.1-rev1`]: https://github.com/pgujjula/primecount-haskell/releases/tag/0.1.0.1-rev1
 [`0.1.0.1`]: https://github.com/pgujjula/primecount-haskell/releases/tag/0.1.0.1
