@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 verbatim:
   cabal-version: 3.6
+  x-revision: 1
 name:         primecount
 version:      0.1.0.2
 synopsis:     Bindings to the primecount library
