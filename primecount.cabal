@@ -22,7 +22,7 @@ tested-with:
 extra-doc-files:
     README.md
     CHANGELOG.md
-x-revision:     1
+x-revision:     2
 
 source-repository head
   type: git
